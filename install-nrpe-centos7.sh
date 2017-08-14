@@ -5,7 +5,7 @@ yum install -y epel-release
 yum install -y nrpe nagios-plugins-users nagios-plugins-load nagios-plugins-swap nagios-plugins-disk nagios-plugins-procs
 
 #Add your Monitor server(s) address(es) to the allowed_hosts sections. 
-sed -i 's|^allowed_hosts=127.0.0.1 = allowed_hosts=127.0.0.1,192.168.200.29|' /etc/nagios/nrpe.cfg
+sed -i 's|^allowed_hosts=127.0.0.1|allowed_hosts=127.0.0.1,192.168.200.29|' /etc/nagios/nrpe.cfg
 
 #Configure the firewall to allow nrpe traffic
 firewall-cmd --permanent --add-port=5666/udp
