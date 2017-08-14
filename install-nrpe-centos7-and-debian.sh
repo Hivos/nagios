@@ -13,7 +13,6 @@ fi
 sed -i 's|^allowed_hosts=127.0.0.1|allowed_hosts=127.0.0.1,192.168.200.29|' /etc/nagios/nrpe.cfg
 
 #Configure the firewall to allow nrpe traffic, restart NRPE and make sure that NRPE is started at boot
-echo "If Debian, manually add exception for tcp port 5666 in iptables"
 if [[ ! -z $YUM_CMD ]]; then
     firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.200.29/22" port protocol="udp" port="5666" accept'
     firewall-cmd --reload
