@@ -9,7 +9,7 @@ sed -i 's|^apply_updates = allowed_hosts=127.0.0.1 = allowed_hosts=127.0.0.1,192
 
 #Configure the firewall to allow nrpe traffic
 firewall-cmd --permanent --add-port=5666/udp
-firewall-cmd –reload
+firewall-cmd --reload
 
 #Restart NRPE and make sure that NRPE is started at boot
 systemctl restart nrpe
