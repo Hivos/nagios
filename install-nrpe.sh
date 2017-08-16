@@ -1,3 +1,4 @@
+#!/bin/bash
 #Define conditional expression
 YUM_CMD=$(which yum)
 
